@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 
 import concurrent.futures
 
-api_key = 'RGAPI-4664ddf4-3e81-4762-b33e-ac39e45add1a'
+api_key = 'RGAPI-blablabla'
 platforms = ["NA1", "KR", "EUW1", "SG2"]
 regions = {"Americas": ["NA1", "BR1"], "Asia": ["KR", "JP"], "Europe": ["EUW1"], "SEA": ["SG2"]}
 

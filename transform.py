@@ -174,6 +174,8 @@ def generate_unit_training_pairs(df, val_size=0.2, random_state=42):
     for _, row in train_boards.iterrows():
         units = [row[col] for col in unit_columns if pd.notna(row[col])]
         for i, label_unit in enumerate(units):
+            if "Summon" in str(label_unit):
+                continue
             input_units = units[:i] + units[i+1:]
             training_data.append({
                 "input_units": input_units,
@@ -187,6 +189,8 @@ def generate_unit_training_pairs(df, val_size=0.2, random_state=42):
             continue  # Skip boards too small to split
         idx = random.randint(0, len(units) - 1)
         label_unit = units[idx]
+        if "Summon" in str(label_unit):
+            continue
         input_units = units[:idx] + units[idx+1:]
         validation_data.append({
             "input_units": input_units,
